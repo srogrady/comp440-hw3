@@ -1,0 +1,8 @@
+yours
+ok         1. Ask the model
+ok         2. Make its lookups
+ok         3. Stop with the answer
+ok         4. Stop at the limit
+ok         5. Count the lookups
+
+Every rule passes. From now on your copy's agent runs on your loop (my_loop.py).

@@ -69,16 +69,16 @@ The Background and an example outline are under 1a on the homework page, and in 
 Write your outline of the loop in the code block: what it remembers, what it repeats, and every way it stops.
 
 ```
-
+The loop should keep track of how many Wikipedia lookups it has made, with a maximum of 12. It should repeatedly ask the LLM what to do next using the conversation history so far. If the LLM asks for more information, the loop should look it up on Wikipedia, add the results to the conversation history, and ask the LLM again. It should keep repeating this process until the LLM gives a final answer or reaches the limit of 12 lookups. Once it has made 12 lookups, it should ask the LLM one final time to see if it can give an answer using the information it has. If the LLM gives an answer, the loop should stop and return it. If it asks for more lookups, the loop should stop without giving a verdict. It should never ask the LLM again after that final attempt.
 ```
 
 List each thing your loop remembers from one turn to the next, and say what would go wrong without it.
 
->
+> My loop remembers the conversation history, including the model's replies and Wikipedia search results, so it doesn't lose track of what it has already learned or repeat searches. It also keeps count of how many lookups it has made out of 12 so it knows when to stop. Without these, the agent could lose important information or keep searching past the limit and take a long time to reach a verdict.
 
 Now open `reference_loop.py` and compare it with your loop. Describe one difference in implementation and the resulting effects on agent behavior.
 
->
+> In the reference loop, the agent checks whether it has reached the limit before making more lookups. In my loop, the agent makes the requested lookups and then gives the model one final chance to answer. This means the reference loop could stop before the model gets to use the latest search results, while my loop gives it a chance to use everything it has found. (difference in order of the loopup limit)
 
 ## 1b. Be the agent
 
@@ -88,11 +88,16 @@ List your lookups, in order. Ask Claude to paste every column but the last from 
 
 | # | Tool | What you asked for | Why you chose it |
 |---|---|---|---|
-| 1 | | | |
+| 1 | search | Vic & Anthony's Steakhouse Landry's Inc |Needed sources to pull evidence from and can't find those before searching. |
+| 2 | read | Vic & Anthony's Steakhouse |reading the searches best results |
+| 3 | read | Landry's |reading the searches best results |
+| 4 | search | Vic & Anthony's in American casino |Wasn't fully confident from earlier results, so needed to search more to get full answer.|
+| 5 | read | Vic & Anthony's Steakhouse |Read results to gather information to get verdict |
+| 6 | read | Golden Nugget Lake Charles |Read results to gather information to get verdict |
 
 What is your verdict on the claim, and which sentence or sentences from what you read is it based on?
 
->
+> Verdict : Supported; Evidence: Page: Vic & Anthony's Steakhouse Vic & Anthony's is an American steakhouse restaurant chain with locations in Downtown Houston, and inside the Golden Nugget Casinos in Las Vegas, Atlantic City and Lake Charles. Vic & Anthony's is owned and operated by Landry's, Inc.
 
 ## 1c. Watch the agent work
 

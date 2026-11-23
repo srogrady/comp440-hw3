@@ -1,0 +1,6 @@
+{"tool": "search", "input": {"query": "Vic & Anthony's Steakhouse Landry's Inc"}}
+{"tool": "read", "input": {"title": "Vic & Anthony's Steakhouse", "section": null}}
+{"tool": "read", "input": {"title": "Landry's", "section": null}}
+{"tool": "search", "input": {"query": "Vic & Anthony's in American casino"}}
+{"tool": "read", "input": {"title": "Vic & Anthony's Steakhouse", "section": null}}
+{"tool": "read", "input": {"title": "Golden Nugget Lake Charles", "section": null}}

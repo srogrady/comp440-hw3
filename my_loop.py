@@ -43,4 +43,32 @@ def run_agent(claim, client=None, max_steps=MAX_STEPS, lookup=run_tool):
     # also pay attention to whether the loop has reached its limit: a claim that runs out of
     # lookups cannot be decided.
     # ---- your loop goes below this line (step 1a) ----
-    raise NotImplementedError("The loop is not written yet: see step 1a.")
+    # The loop should keep track of how many Wikipedia lookups it has made, with a maximum of 12.
+    # (steps, set up above, is this count; max_steps is the maximum of 12)
+    # It should repeatedly ask the LLM what to do next using the conversation history so far.
+    while True:
+        reply = talk.ask()
+        # If the LLM asks for more information, the loop should look it up on Wikipedia, add the
+        # results to the conversation history, and ask the LLM again.
+        if reply.lookups:
+            for call in reply.lookups:
+                talk.give(call, talk.run(call))
+                steps += 1
+            talk.send_results()
+        # It should keep repeating this process until the LLM gives a final answer or reaches the
+        # limit of 12 lookups.
+        if reply.answer is not None:
+            return talk.accept(reply.answer, steps)
+        if steps >= max_steps:
+            break
+    # Once it has made 12 lookups, it should ask the LLM one final time to see if it can give an
+    # answer using the information it has.
+    reply = talk.ask()
+    # If the LLM gives an answer, the loop should stop and return it.
+    if reply.answer is not None:
+        return talk.accept(reply.answer, steps)
+    # If it asks for more lookups, the loop should stop without giving a verdict.
+    if reply.lookups:
+        return talk.stop(RAN_OUT, steps)
+    # It should never ask the LLM again after that final attempt.
+    # (no new Python: both lines above stop the loop, and nothing after them asks again)
