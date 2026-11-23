@@ -1,0 +1,7 @@
+ok         .env file found
+ok         ANTHROPIC_API_KEY is filled in
+ok         WIKIPEDIA_CONTACT is filled in
+ok         Wikipedia answered a search
+ok         the Claude API accepted your key
+
+Everything is ready.

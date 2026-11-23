@@ -1,0 +1,46 @@
+{
+ "claim": "The composer of \"Persian Surgery Dervishes\" was born on June 24, 1935.",
+ "verdict": "supported",
+ "evidence": [
+  "Terrence Mitchell Riley (born June 24, 1935) is an American composer and performing musician best known as a pioneer of the minimalist school of composition."
+ ],
+ "explanation": "\"Persian Surgery Dervishes\" is a 1972 Terry Riley work, and Wikipedia's article on Riley gives his birth date as June 24, 1935, which Wikidata also confirms.",
+ "trace": [
+  {
+   "tool": "search",
+   "input": {
+    "query": "Persian Surgery Dervishes composer"
+   },
+   "result": "1. Persian Surgery Dervishes: Polac. Persian Surgery Dervishes has been republished twice: first by Mantra Records, and then by Dunya Records. On Persian Surgery Dervishes Riley plays\n2. Terry Riley: for solo electric organ; two soundtracks (2007 reissue) 1972: Persian Surgery Dervishes, Shanti 83502 1975: Le Secret de la Vie (Lifespan film soundtrack)\n3. Jon B. Higgins: the original on March 24, 2008. *Cowley, Julian. Terry Riley \"Persian Surgery Dervishes\" liner notes. Aguirre Records. 2017. \"Alvin Lucier \u2013 Crossings\n4. List of Iranian women: Iranian-British professor of cardiac surgery at St George's, University of London, first female professor of cardiac surgery in the United Kingdom and Europe\n5. Deaths in July 2026: and the Dervish) and singer. Kim Hyeong-gwang, 91, South Korean politician, MP (1979\u20131980, 1985\u20131988). Bill McGlaughlin, 82, American composer and radio"
+  },
+  {
+   "tool": "wikidata",
+   "input": {
+    "entity": "Terry Riley",
+    "property": "date of birth"
+   },
+   "result": "Wikidata: Terry Riley (Q365243), date of birth: 1935-06-24"
+  },
+  {
+   "tool": "read",
+   "input": {
+    "title": "Terry Riley"
+   },
+   "result": "Page: Terry Riley\n\nTerrence Mitchell Riley (born June 24, 1935) is an American composer and performing musician best known as a pioneer of the minimalist school of composition. Influenced by jazz and Indian classical music, his work became notable for its innovative use of repetition, tape delay systems, and improvisation. His best known works are the 1964 composition In C and the 1969 album A Rainbow in Curved Air, both considered landmarks of minimalism and important influences on experimental music, rock, and contemporary electronic music.\nRaised in Redding, California, Riley began studying composition and performing solo piano in the 1950s. He befriended and collaborated with composer La Monte Young, and later became involved with both the San Francisco Tape Music Center and Young's New York-based Theatre of Eternal Music. A three-record deal with CBS in the late 1960s brought his work to wider audiences. In 1970, he began intensive studies under Hindustani singer Pandit Pran Nath, whom he often accompanied in performance. Subsequent works such as Shri Camel (1980) explored just intonation. He has collaborated frequently throughout his career, most extensively with chamber ensemble the Kronos Quartet and his son, guitarist Gyan Riley.\n\nSections: Life, Musical style, Techniques, Personal life, Discography, Filmography, Further reading, External links"
+  },
+  {
+   "tool": "answer",
+   "input": {
+    "verdict": "supported",
+    "evidence": [
+     "Terrence Mitchell Riley (born June 24, 1935) is an American composer and performing musician best known as a pioneer of the minimalist school of composition."
+    ],
+    "explanation": "\"Persian Surgery Dervishes\" is a 1972 Terry Riley work, and Wikipedia's article on Riley gives his birth date as June 24, 1935, which Wikidata also confirms."
+   },
+   "result": "accepted"
+  }
+ ],
+ "steps": 3,
+ "seconds": 5.351078033447266,
+ "method": "agent"
+}

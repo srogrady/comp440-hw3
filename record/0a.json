@@ -1,0 +1,91 @@
+{
+  "step": "0a",
+  "title": "Get your copy running",
+  "session_id": null,
+  "conversations": [
+    "98f03c83-6dc2-449c-bd10-f2140004abec"
+  ],
+  "complete": true,
+  "checkpoints": [
+    {
+      "text": "Your .env is copied from .env.example and filled in",
+      "reached": true
+    },
+    {
+      "text": "Your name is after Name: at the top of WRITEUP.md",
+      "reached": true
+    },
+    {
+      "text": "This step's Claude session is started",
+      "reached": true
+    },
+    {
+      "text": "The set-up check says everything is ready",
+      "reached": true
+    }
+  ],
+  "answers": [
+    {
+      "question": "Name",
+      "answer": "Shaylee O'Grady",
+      "written_by": "the student"
+    }
+  ],
+  "record": [
+    {
+      "kind": "mark",
+      "reached": [
+        "Your .env is copied from .env.example and filled in",
+        "Your name is after Name: at the top of WRITEUP.md",
+        "This step's Claude session is started"
+      ],
+      "time": "2026-11-22T16:58:35-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "run the set-up check please",
+      "time": "2026-11-22T17:04:33-06:00"
+    },
+    {
+      "kind": "ran",
+      "text": "Ran check_setup.py",
+      "status": "ok",
+      "file": null,
+      "time": "2026-11-22T17:04:34-06:00"
+    },
+    {
+      "kind": "ran",
+      "text": "Looked at WRITEUP.md",
+      "status": "ok",
+      "file": null,
+      "reached": [
+        "The set-up check says everything is ready"
+      ],
+      "time": "2026-11-22T17:04:40-06:00"
+    }
+  ],
+  "told_the_page": [
+    {
+      "time": "2026-11-22T17:04:13-06:00",
+      "kind": "checkpoint",
+      "n": 3,
+      "text": "This step's Claude session is started"
+    },
+    {
+      "time": "2026-11-22T17:04:13-06:00",
+      "kind": "status",
+      "text": "Waiting for .env and your name in WRITEUP.md"
+    },
+    {
+      "time": "2026-11-22T17:04:35-06:00",
+      "kind": "status",
+      "text": "Running the set-up check"
+    },
+    {
+      "time": "2026-11-22T17:04:40-06:00",
+      "kind": "status",
+      "text": "Set-up check passed"
+    }
+  ],
+  "turns": 2
+}

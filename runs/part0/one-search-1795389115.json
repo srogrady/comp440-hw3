@@ -1,0 +1,30 @@
+{
+ "claim": "The composer of \"Persian Surgery Dervishes\" was born on June 24, 1935.",
+ "verdict": "doesn't say",
+ "evidence": [],
+ "explanation": "The provided Wikipedia text identifies Terry Riley as the composer of Persian Surgery Dervishes but does not give his birth date, so the June 24, 1935 claim can be neither confirmed nor refuted from it.",
+ "trace": [
+  {
+   "tool": "search",
+   "input": {
+    "query": "\"Persian Surgery Dervishes\" composer"
+   },
+   "result": "1. Persian Surgery Dervishes: Persian Surgery Dervishes is a recording of two live solo electric organ concerts, the first held in Los Angeles on 18 April 1971 and the second in Paris\n2. Terry Riley: for solo electric organ; two soundtracks (2007 reissue) 1972: Persian Surgery Dervishes, Shanti 83502 1975: Le Secret de la Vie (Lifespan film soundtrack)\n3. At the Royal Majestic: previously featured it in such works as A Rainbow in Curved Air, Persian Surgery Dervishes, The Ten Voices of the Two Prophets, and Shri Camel. At the Royal\n4. Jon B. Higgins: the original on March 24, 2008. *Cowley, Julian. Terry Riley \"Persian Surgery Dervishes\" liner notes. Aguirre Records. 2017. \"Alvin Lucier \u2013 Crossings"
+  },
+  {
+   "tool": "read",
+   "input": {
+    "title": "Persian Surgery Dervishes"
+   },
+   "result": "Page: Persian Surgery Dervishes\n\nPersian Surgery Dervishes is a recording of two live solo electric organ concerts, the first held in Los Angeles on 18 April 1971 and the second in Paris on 24 May 1972, by the avant-garde minimalist composer Terry Riley, following his A Rainbow in Curved Air and In C.\n\nSections: Background and release, Music, References, External links"
+  }
+ ],
+ "steps": 2,
+ "tokens": {
+  "input": 353,
+  "output": 439
+ },
+ "cost_usd": 0.000255,
+ "seconds": 3.703439950942993,
+ "method": "one-search"
+}
