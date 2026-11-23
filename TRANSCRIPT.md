@@ -9,7 +9,7 @@ Claude's reasoning is left out. Don't edit it by hand; the page writes it again.
 <!-- transcript-session: 98f03c83-6dc2-449c-bd10-f2140004abec | 2026-11-22T23:04:09.126Z -->
 ## Session `98f03c83` — 2026-11-22 23:04:09
 
-*10 user turns. Tool output shortened; reasoning omitted.*
+*12 user turns. Tool output shortened; reasoning omitted.*
 
 **User:**
 Start step 0a.
@@ -348,6 +348,64 @@ There are three lookups. The "Lookups" count includes three kinds of call: `sear
 
 You can see each lookup's full result in the results viewer, through "Open these results" under 0d. Your answers go in `WRITEUP.md`, under 0d, in your editor.
 
+**User:**
+Start step 1a. Read .workbench/1a.md and follow it from now on, in place of your instructions for any other step.
+
+**Claude:**
+- 🔧 `Read` — /Users/shayleeogrady/Documents/macalester/fall 2026/collective intell/comp440-hw3/.workbench/1a.md
+
+  ```
+  253	# This session: one step of the assignment
+  254	
+  255	You help with one step, and only this one: 1a, "Design the loop", in Part 1 (How the agent works).
+  256	What this step is, as the page says it under the step's title: In this step you design the agent's loop. You write an outline of its logic in plain words, and Claude translates your outline int...
+  257	This step takes about 45 minutes, as the page says. Say so if the student asks.
+  258	The student talks to you in a terminal. Beside it, a web page shows every step of the assignment,
+  259	each with its own Claude Code session, and this step's instructions, which say:
+  260	
+  261	<step-instructions>
+  262	In this step you design the agent's loop. You write an outline of its logic in plain words, and Claude
+  263	translates your outline into Python. The loop asks the model for lookups, runs the lookups it chooses,
+  264	sends back what they return, and stops.
+  ... (367 more lines)
+  ```
+
+- 🔧 `Bash` — python3 .workbench/page.py 1a status "Waiting for your outline in WRITEUP.md"
+
+  ```
+  The page now says: Waiting for your outline in WRITEUP.md
+  ```
+
+This session is now on step 1a.
+
+In this step you design the agent's loop. You write an outline of its logic in plain words, and I translate that outline into Python in `my_loop.py`. The loop asks the model for lookups, runs the lookups it chooses, sends back what they return, and stops.
+
+Start by reading the Background on the homework page. Then write your outline in the code block under 1a in `WRITEUP.md`, in your editor. When it's saved, ask me to translate it.
+
+**User:**
+so I just write in normal words what I think the loop should do?
+
+**Claude:**
+Yes. Write it in plain words, one action per line, in the order the loop does them. The homework page gives these guidelines:
+
+- Indent whatever happens inside a repeat or inside an if.
+- Say what the loop remembers from one turn to the next, and where each of those things is set and changed.
+- Say every way the loop stops, and what it stops with: an answer, or no verdict.
+
+The page's example outlines grading a stack of quizzes, to show the style:
+
+```
+Remember: the total of the scores (none yet), and how many quizzes have been graded (none yet).
+For each quiz in the stack:
+    If it has no name on it: put it aside, and go on to the next quiz.
+    Score its answers, add the score to the total, and count the quiz.
+When the stack is done: say the average score (the total divided by the count), and stop.
+```
+
+I translate each line into one or two lines of Python and add nothing of my own. If your outline leaves something out, the Python leaves it out too, and the check will show what happens. You don't need every detail right on the first try.
+
+Write the outline in the block under 1a in `WRITEUP.md`, in your editor. When it's saved, ask me to translate it.
+
 <!-- end-session: 98f03c83-6dc2-449c-bd10-f2140004abec -->
 
 # 0b. Ask the model to assess a claim without tools
@@ -362,12 +420,16 @@ This step was done in the conversation under 0a, session `98f03c83`, from the me
 
 This step was done in the conversation under 0a, session `98f03c83`, from the message “Start step 0d.”
 
+# 1a. Design the loop
+
+This step was done in the conversation under 0a, session `98f03c83`, from the message “Start step 1a.”
+
 # Other Claude sessions in this folder
 
 <!-- transcript-session: b737dbec-c31d-40e5-aef3-7a371ebc2b32 | 2026-11-22T22:42:45.875Z -->
 ## Session `b737dbec` — 2026-11-22 22:42:45
 
-*10 user turns. Tool output shortened; reasoning omitted.*
+*12 user turns. Tool output shortened; reasoning omitted.*
 
 **User:**
 okay let's do this homework!
@@ -592,5 +654,72 @@ That message came from your step 0a session in the terminal, so step 0a is done.
 - **Option 2:** Copy step 0b's **command**, the one that starts `claude -n "0b ...`. Paste it at a fresh `%` prompt in a terminal tab in the homework folder. That starts a new session.
 
 Either way works. Do the work in the sessions the homework page starts, not in this VS Code chat.
+
+**User:**
+<ide_opened_file>The user opened the file /Users/shayleeogrady/Documents/macalester/fall 2026/collective intell/comp440-hw3/WRITEUP.md in the IDE. This may or may not be related to the current task.</ide_opened_file>
+
+what would be halfwya through this homework assignmemnt? BEcause its due tuesday so i basically have tonight and tomorrow to work on it but I also have a notehr assignment to do
+
+**Claude:**
+- 🔧 `Bash` — grep -n -E "^\[|^title|^summary|^minutes|^time" "/Users/shayleeogrady/Documents/macalester/fall 2026/collective intell/comp440-hw3/steps.toml"
+
+  ```
+  40:title = "COMP 440 HW3: Checking Claims Against Wikipedia"
+  343:[[part]]
+  345:title = "Set up and check one claim"
+  348:[[part]]
+  350:title = "How the agent works"
+  353:[[part]]
+  355:title = "The agent against the baselines"
+  358:[[part]]
+  360:title = "Why the agent fails, and one change"
+  368:[[step]]
+  371:title = "Get your copy running"
+  374:minutes = 20
+  ... (54 more lines)
+  ```
+
+- 🔧 `Bash` — grep -n -E "^id|^part =" "/Users/shayleeogrady/Documents/macalester/fall 2026/collective intell/comp440-hw3/steps.toml"
+
+  ```
+  369:id = "0a"
+  370:part = 0
+  430:id = "0b"
+  431:part = 0
+  471:id = "0c"
+  472:part = 0
+  514:id = "0d"
+  515:part = 0
+  582:id = "1a"
+  583:part = 1
+  818:id = "1b"
+  819:part = 1
+  ... (16 more lines)
+  ```
+
+These are the homework page's time estimates, from steps.toml. The required parts are 0 to 2. Part 3 is extra credit.
+
+| Part | Steps | About |
+|---|---|---|
+| 0: Set up and check one claim | 0a (done), 0b, 0c, 0d | 1 hr total, 40 min left |
+| 1: How the agent works | 1a 45, 1b 35, 1c 25, 1d 45, 1e 20 min | 2 hr 50 min |
+| 2: The agent against the baselines | 2a 25, 2b 35 min | 1 hr |
+| 3: Extra credit | 3a 45, 3b 45, 3c 30 min | 2 hr |
+
+The required work comes to about 5 hours in total.
+
+**Halfway is the end of step 1b**, about 2 hr 20 min in.
+
+A possible split:
+- **Tonight:** 0b through 1b, about 2 hours.
+- **Tomorrow:** 1c through 2b, about 2.5 hours. The full run in 1e takes about 10 minutes. It runs in its own terminal tab, so you can work on your other assignment while it goes.
+
+These are the page's estimates, so your times may differ. Step 3c is listed under Part 3, so check the homework page for whether it's required. To keep going, start step 0b from the homework page.
+
+**User:**
+okay lets get to 1 b then
+
+**Claude:**
+Next is step 0b. On the homework page, copy step 0b's prompt, the line that starts "Start step 0b...", and paste it here or into your terminal session. I'll follow that step from there. The steps go in order: 0b, 0c, 0d, 1a, then 1b.
 
 <!-- end-session: b737dbec-c31d-40e5-aef3-7a371ebc2b32 -->

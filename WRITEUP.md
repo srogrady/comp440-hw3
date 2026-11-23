@@ -69,6 +69,7 @@ The Background and an example outline are under 1a on the homework page, and in 
 Write your outline of the loop in the code block: what it remembers, what it repeats, and every way it stops.
 
 ```
+
 ```
 
 List each thing your loop remembers from one turn to the next, and say what would go wrong without it.
