@@ -127,7 +127,7 @@ Predict the share of claims each version will get right (its verdict matches the
 |---|---|---|---|---|
 | No tools |25|15|10|It has no tools so it's already getting a large portion wrong, then the more articles needed the harder the question so it decreases in percents|
 | One search |55 |45|25 |It has only a singular search, so it going to be closer to a 50/50 chance now that it has some context, but similarly to before it will struggling with claims that require more information|
-| Agent |86|80|65|Agent can use many sources, but I already saw it struggle to be entirely correct, so I assume it will be pretty strong in on claims that require 2-3 articles but have a larger drop off of accuracy for 4 articles |
+| Agent |86|80|65|Agent can use many sources, but I already saw it struggle to be entirely correct, so I assume it will be pretty strong in on claims that require 2-3 articles but have a larger drop off of accuracy for claims that need 4 articles |
 
 How many lookups will the agent make per claim, on average? Why?
 
@@ -140,6 +140,25 @@ How many lookups will the agent make per claim, on average? Why?
 Ask Claude to paste the report of your full run, from `runs/part2/report.txt`, into the empty block below.
 
 ```
+Share of claims where the verdict matched the label:
+
+                          no-tools  one-search       agent
+HoVer, 2 articles         19/34       16/34       22/34   
+HoVer, 3 articles         23/33       17/33       21/33   
+HoVer, 4 articles         19/33       17/33       20/33   
+All                       61/100      50/100      63/100  
+
+HoVer, supported          16/50        1/50       24/50   
+HoVer, not supported      45/50       49/50       39/50   
+
+Average per claim:
+
+                         lookups   seconds
+no-tools                     0.0       3.4
+one-search                   2.0       4.3
+agent                        5.1      12.1
+
+1 runs gave no verdict (for example a refusal, or out of lookups). They count as wrong. The results viewer lists them on this run's page, under "Claims with no verdict, or that stopped with an error".
 ```
 
 How do the results compare with your predictions? Where were you furthest off? Use the numbers from your run, by number of articles.

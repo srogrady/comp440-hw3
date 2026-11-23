@@ -1424,7 +1424,7 @@ This step was done in the conversation under 0a, session `98f03c83`, from the me
 <!-- transcript-session: 5f828321-7bfb-4546-8638-128056e5637e | 2026-11-23T19:23:22.843Z -->
 ## Session `5f828321` — 2026-11-23 19:23:22
 
-*22 user turns. Tool output shortened; reasoning omitted.*
+*26 user turns. Tool output shortened; reasoning omitted.*
 
 **User:**
 Start step 1c.
@@ -2078,11 +2078,152 @@ One thing to think about as you fill in each row: does that idea affect all thre
 
 Type it under 1e in WRITEUP.md, in your editor.
 
+**User:**
+so again just to confirm the number of articles is the amount of articles it take to formulate the question itself
+
+**Claude:**
+Close. It's the number of Wikipedia articles you need to **check** the claim: to find every fact in it and decide whether it's *supported* or not. The page calls it "how many Wikipedia articles a claim needs".
+
+The people who made the dataset, HoVer, built each claim from facts in that many articles. So the two ideas line up: a 4-article claim was written from 4 pages, and checking it fully takes facts from those 4 pages.
+
+Next, type your guesses under 1e in WRITEUP.md, in your editor.
+
+**User:**
+so that like teh source of truth
+
+**Claude:**
+Partly. Two different things are worth keeping apart:
+
+- **The number of articles** is a fact about how each claim was built. It tells you how many pages the claim's facts come from. It doesn't say whether the claim is true.
+- **The dataset's label** (*supported* or *not supported*) is what the run counts as right. A version "gets a claim right" when its verdict matches that label.
+
+So in this homework, the dataset's label is what the scores are measured against. But people made the labels, from the Wikipedia of 2017, and the 1c Hint said one might look wrong to you. Today's Wikipedia can also say something different. Whether matching the label is a fair measure is a question the homework comes back to in Part 2.
+
+Next, type your guesses under 1e in WRITEUP.md, in your editor.
+
+**User:**
+Start step 2a. Read .workbench/2a.md and follow it from now on, in place of your instructions for any other step.
+
+**Claude:**
+- 🔧 `Read` — /Users/shayleeogrady/Documents/macalester/fall 2026/collective intell/comp440-hw3/.workbench/2a.md
+
+  ```
+  253	# This session: one step of the assignment
+  254	
+  255	You help with one step, and only this one: 2a, "Compare accuracy", in Part 2 (The agent against the baselines).
+  256	What this step is, as the page says it under the step's title: In this step you find out how often each of the three versions matched the dataset's label on your 100 evaluation claims. You comp...
+  257	This step takes about 25 minutes, as the page says. Say so if the student asks.
+  258	The student talks to you in a terminal. Beside it, a web page shows every step of the assignment,
+  259	each with its own Claude Code session, and this step's instructions, which say:
+  260	
+  261	<step-instructions>
+  262	In this step you find out how often each of the three versions matched the dataset's label on your 100
+  263	evaluation claims. You compare those numbers with your predictions from 1e.
+  264	
+  ... (138 more lines)
+  ```
+
+- 🔧 `Bash` — ls runs/part2
+
+  ```
+  agent.jsonl
+  no-tools.jsonl
+  one-search.jsonl
+  report.txt
+  run.json
+  ```
+
+I'm now on step 2a.
+
+In this step you find out how often each of the three versions matched the dataset's label on your 100 evaluation claims, and you compare those numbers with your predictions from 1e. Your full run has finished: runs/part2 now has its report.txt. When you're ready, ask me to paste the report into the empty block under 2a in WRITEUP.md.
+
+**User:**
+paste the report
+
+**Claude:**
+- 🔧 `Read` — /Users/shayleeogrady/Documents/macalester/fall 2026/collective intell/comp440-hw3/runs/part2/repo...
+
+  ```
+  1	Share of claims where the verdict matched the label:
+  2	
+  3	                          no-tools  one-search       agent
+  4	HoVer, 2 articles         19/34       16/34       22/34   
+  5	HoVer, 3 articles         23/33       17/33       21/33   
+  6	HoVer, 4 articles         19/33       17/33       20/33   
+  7	All                       61/100      50/100      63/100  
+  8	
+  9	HoVer, supported          16/50        1/50       24/50   
+  10	HoVer, not supported      45/50       49/50       39/50   
+  11	
+  12	Average per claim:
+  ... (8 more lines)
+  ```
+
+- 🔧 `Bash` — grep -n "2a. Compare accuracy" WRITEUP.md
+
+  ```
+  138:## 2a. Compare accuracy
+  ```
+
+- 🔧 `Read` — /Users/shayleeogrady/Documents/macalester/fall 2026/collective intell/comp440-hw3/WRITEUP.md
+
+  ````
+  138	## 2a. Compare accuracy
+  139	
+  140	Ask Claude to paste the report of your full run, from `runs/part2/report.txt`, into the empty block below.
+  141	
+  142	```
+  143	```
+  144	
+  145	How do the results compare with your predictions? Where were you furthest off? Use the numbers from your run, by number of articles.
+  146	
+  147	>
+  148	
+  149	Does the gap between the agent and the one-search baseline grow with the number of articles? What in the claims or the traces explains what you see?
+  ... (8 more lines)
+  ````
+
+- 🔧 `Edit` — /Users/shayleeogrady/Documents/macalester/fall 2026/collective intell/comp440-hw3/WRITEUP.md
+
+  ```
+  The file /Users/shayleeogrady/Documents/macalester/fall 2026/collective intell/comp440-hw3/WRITEUP.md has been updated successfully.
+  ```
+
+Here is runs/part2/report.txt. I pasted it word for word into the empty block under 2a in WRITEUP.md:
+
+```
+Share of claims where the verdict matched the label:
+
+                          no-tools  one-search       agent
+HoVer, 2 articles         19/34       16/34       22/34   
+HoVer, 3 articles         23/33       17/33       21/33   
+HoVer, 4 articles         19/33       17/33       20/33   
+All                       61/100      50/100      63/100  
+
+HoVer, supported          16/50        1/50       24/50   
+HoVer, not supported      45/50       49/50       39/50   
+
+Average per claim:
+
+                         lookups   seconds
+no-tools                     0.0       3.4
+one-search                   2.0       4.3
+agent                        5.1      12.1
+
+1 runs gave no verdict (for example a refusal, or out of lookups). They count as wrong. The results viewer lists them on this run's page, under "Claims with no verdict, or that stopped with an error".
+```
+
+Next, open **Results** at the top of the homework page, then "runs/part2", and read "Accuracy". It shows the same counts as percentages. Then, in your editor, answer the three questions under 2a in WRITEUP.md. You don't need to reply here, but you can ask me how to read any row.
+
 <!-- end-session: 5f828321-7bfb-4546-8638-128056e5637e -->
 
 # 1d. Write the agent's instructions
 
 This step was done in the conversation under 1c, session `5f828321`, from the message “Start step 1d.”
+
+# 2a. Compare accuracy
+
+This step was done in the conversation under 1c, session `5f828321`, from the message “Start step 2a.”
 
 # Other Claude sessions in this folder
 

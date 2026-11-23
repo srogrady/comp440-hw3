@@ -1,0 +1,78 @@
+{
+  "step": "2a",
+  "title": "Compare accuracy",
+  "session_id": null,
+  "conversations": [
+    "5f828321-7bfb-4546-8638-128056e5637e"
+  ],
+  "complete": false,
+  "checkpoints": [
+    {
+      "text": "The full run is finished",
+      "reached": true
+    },
+    {
+      "text": "The report and your answers are in WRITEUP.md",
+      "reached": false
+    }
+  ],
+  "answers": [
+    {
+      "question": "Ask Claude to paste the report of your full run, from `runs/part2/report.txt`, into the empty block below.",
+      "answer": "Share of claims where the verdict matched the label:\n\n                          no-tools  one-search       agent\nHoVer, 2 articles         19/34       16/34       22/34   \nHoVer, 3 articles         23/33       17/33       21/33   \nHoVer, 4 articles         19/33       17/33       20/33   \nAll                       61/100      50/100      63/100  \n\nHoVer, supported          16/50        1/50       24/50   \nHoVer, not supported      45/50       49/50       39/50   \n\nAverage per claim:\n\n                         lookups   seconds\nno-tools                     0.0       3.4\none-search                   2.0       4.3\nagent                        5.1      12.1\n\n1 runs gave no verdict (for example a refusal, or out of lookups). They count as wrong. The results viewer lists them on this run's page, under \"Claims with no verdict, or that stopped with an error\".",
+      "written_by": "Claude, in 2a's session"
+    },
+    {
+      "question": "How do the results compare with your predictions? Where were you furthest off? Use the numbers from your run, by number of articles.",
+      "answer": "",
+      "written_by": null
+    },
+    {
+      "question": "Does the gap between the agent and the one-search baseline grow with the number of articles? What in the claims or the traces explains what you see?",
+      "answer": "",
+      "written_by": null
+    },
+    {
+      "question": "The no-tools baseline read nothing. How did it do, and what does that tell you about these claims?",
+      "answer": "",
+      "written_by": null
+    }
+  ],
+  "record": [
+    {
+      "kind": "mark",
+      "reached": [
+        "The full run is finished"
+      ],
+      "time": "2026-11-23T17:32:24-06:00"
+    },
+    {
+      "kind": "ran",
+      "text": "Listed files",
+      "status": "ok",
+      "file": null,
+      "time": "2026-11-23T17:41:09-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "paste the report",
+      "time": "2026-11-23T17:42:43-06:00"
+    },
+    {
+      "kind": "ran",
+      "text": "Find the 2a section in the write-up",
+      "status": "ok",
+      "file": null,
+      "time": "2026-11-23T17:42:45-06:00"
+    },
+    {
+      "kind": "ran",
+      "text": "Edited WRITEUP.md",
+      "status": "ok",
+      "file": null,
+      "time": "2026-11-23T17:42:50-06:00"
+    }
+  ],
+  "told_the_page": [],
+  "turns": 2
+}
