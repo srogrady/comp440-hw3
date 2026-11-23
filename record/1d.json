@@ -1,0 +1,126 @@
+{
+  "step": "1d",
+  "title": "Write the agent's instructions",
+  "session_id": null,
+  "conversations": [
+    "5f828321-7bfb-4546-8638-128056e5637e"
+  ],
+  "complete": true,
+  "checkpoints": [
+    {
+      "text": "Your own instructions are in instructions.md, and say: how to break a claim into pieces; when to use wikidata; when to stop; when to answer \"doesn't say\"",
+      "reached": true
+    },
+    {
+      "text": "The second run on your 12 development claims is saved",
+      "reached": true
+    },
+    {
+      "text": "Your answer is in WRITEUP.md",
+      "reached": true
+    }
+  ],
+  "answers": [
+    {
+      "question": "What changed in the agent's traces after you wrote your instructions? Give one claim as an example.",
+      "answer": "2 rows changed one that was originally an incorrect verdict became correct and the second one with the claim \"The quartets that released One Thousand Years of Trouble and Vector were both a rock band.\" Went from a semi correct verdict \"doesn't say\" to a more confindent verdict of \"refuted\".",
+      "written_by": "the student"
+    }
+  ],
+  "record": [
+    {
+      "kind": "asked",
+      "text": "okay i wrote the instructions",
+      "time": "2026-11-23T16:33:20-06:00"
+    },
+    {
+      "kind": "ran",
+      "text": "Looked at a git diff",
+      "status": "ok",
+      "file": null,
+      "reached": [
+        "Your own instructions are in instructions.md, and say: how to break a claim into pieces; when to use wikidata; when to stop; when to answer \"doesn't say\""
+      ],
+      "time": "2026-11-23T16:33:22-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "run the agent",
+      "time": "2026-11-23T16:33:37-06:00"
+    },
+    {
+      "kind": "ran",
+      "text": "Ran evaluate.py data/dev.jsonl --methods agent",
+      "status": "ok",
+      "file": null,
+      "reached": [
+        "The second run on your 12 development claims is saved",
+        "Your answer is in WRITEUP.md"
+      ],
+      "time": "2026-11-23T16:33:39-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "okay Start step 1e. Read .workbench/1e.md and follow it from now on, in place of your instructions for any other step.",
+      "time": "2026-11-23T16:45:25-06:00"
+    },
+    {
+      "kind": "ran",
+      "text": "Listed files",
+      "status": "error",
+      "file": null,
+      "time": "2026-11-23T16:45:28-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "wait so im confused what am i guessing/where am i writing the guess",
+      "time": "2026-11-23T16:48:11-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "wait i think i messed up the 10 minute run",
+      "time": "2026-11-23T17:28:30-06:00"
+    },
+    {
+      "kind": "ran",
+      "text": "Listed files",
+      "status": "ok",
+      "file": null,
+      "time": "2026-11-23T17:28:32-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "when i paste that in teh same one it does nothing",
+      "time": "2026-11-23T17:30:09-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "okay it's doing that",
+      "time": "2026-11-23T17:31:13-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "how can I predict percentages for 2 articles 3 articles and 4 articles and what do i even say for why",
+      "time": "2026-11-23T17:31:38-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "so like for no tools there can;t be any ariticles?",
+      "time": "2026-11-23T17:33:28-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "so the more articles teh harder claim it is to confirm",
+      "time": "2026-11-23T17:35:33-06:00"
+    }
+  ],
+  "told_the_page": [
+    {
+      "time": "2026-11-23T16:33:24-06:00",
+      "kind": "checkpoint",
+      "n": 1,
+      "text": "Your own instructions are in instructions.md, and say: how to break a claim into pieces; when to use wikidata; when to stop; when to answer \"doesn't say\""
+    }
+  ],
+  "turns": 11
+}

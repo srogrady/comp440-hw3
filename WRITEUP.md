@@ -105,19 +105,19 @@ List the three traces you read closely. At least one should be a claim the agent
 
 | # | Claim (first few words) | Articles | Did it match the dataset's label? | Did it get there for a good reason? Why or why not |
 |---|---|---|---|---|
-| 1 | | | | |
-| 2 | | | | |
-| 3 | | | | |
+| 1 |"the rule of the dynasty that was active when the stone was inscribed.."|3|yes; supported |It did, it had three very supportive articles pulled, and even discussed a misleading point in it's explaination. |
+| 2 |"Four operas are amoung the artist who composed The Prelude for Clarinet..." |2|no;refuted|The agent's explanation gives two reasons, not one. First, the list of best-known works it quoted names no operas. Second, the page says "five operas", not four. Its evidence is one quoted passage, from the "Krzysztof Penderecki" page, which it read in entry 3. It did 3 lookups in all.|
+| 3 |"The former leader of the school of Soviet and Russian humorists's youngest son.."|2|no;supported|Its explanation says: "The articles never use the words 'youngest son,' but they mention only one son (Konstantin, alongside a daughter, Ekaterina), so the claim holds in substance though that detail is not stated explicitly." So, again it's being too specific maybe?|
 
 Which trace did you find most interesting, and what did the agent do well or badly in it?
 
->
+> I find the last one form above the most intresting, because it used some intresting reasoning (the daughter being the only other child mentioned) to feel like the claim was supported. 
 
 ## 1d. Write the agent's instructions
 
 What changed in the agent's traces after you wrote your instructions? Give one claim as an example.
 
->
+> 2 rows changed one that was originally an incorrect verdict became correct and the second one with the claim "The quartets that released One Thousand Years of Trouble and Vector were both a rock band." Went from a semi correct verdict "doesn't say" to a more confindent verdict of "refuted".
 
 ## 1e. Start the full run, and predict
 
@@ -125,13 +125,13 @@ Predict the share of claims each version will get right (its verdict matches the
 
 | Version | 2 articles | 3 articles | 4 articles | Why you think so |
 |---|---|---|---|---|
-| No tools | | | | |
-| One search | | | | |
-| Agent | | | | |
+| No tools |25|15|10|It has no tools so it's already getting a large portion wrong, then the more articles needed the harder the question so it decreases in percents|
+| One search |55 |45|25 |It has only a singular search, so it going to be closer to a 50/50 chance now that it has some context, but similarly to before it will struggling with claims that require more information|
+| Agent |86|80|65|Agent can use many sources, but I already saw it struggle to be entirely correct, so I assume it will be pretty strong in on claims that require 2-3 articles but have a larger drop off of accuracy for 4 articles |
 
 How many lookups will the agent make per claim, on average? Why?
 
->
+> 7 Because it has a rule that it can't go over 13 so I would think it would be around this middle range. 
 
 # Part 2: The agent against the baselines
 

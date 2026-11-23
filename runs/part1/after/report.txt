@@ -1,0 +1,17 @@
+Share of claims where the verdict matched the label:
+
+                             agent
+HoVer, 2 articles          2/4    
+HoVer, 3 articles          4/4    
+HoVer, 4 articles          2/4    
+All                        8/12   
+
+HoVer, supported           4/6    
+HoVer, not supported       4/6    
+
+Average per claim:
+
+                         lookups   seconds
+agent                        7.5      11.2
+
+1 runs gave no verdict (for example a refusal, or out of lookups). They count as wrong. The results viewer lists them on this run's page, under "Claims with no verdict, or that stopped with an error".

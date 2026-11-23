@@ -5,36 +5,36 @@
   "conversations": [
     "98f03c83-6dc2-449c-bd10-f2140004abec"
   ],
-  "complete": false,
+  "complete": true,
   "checkpoints": [
     {
       "text": "Your outline is in WRITEUP.md",
-      "reached": false
+      "reached": true
     },
     {
       "text": "Your loop in my_loop.py passes every rule of the check",
-      "reached": false
+      "reached": true
     },
     {
       "text": "Your answers are in WRITEUP.md",
-      "reached": false
+      "reached": true
     }
   ],
   "answers": [
     {
       "question": "Write your outline of the loop in the code block: what it remembers, what it repeats, and every way it stops.",
-      "answer": "",
-      "written_by": null
+      "answer": "The loop should keep track of how many Wikipedia lookups it has made, with a maximum of 12. It should repeatedly ask the LLM what to do next using the conversation history so far. If the LLM asks for more information, the loop should look it up on Wikipedia, add the results to the conversation history, and ask the LLM again. It should keep repeating this process until the LLM gives a final answer or reaches the limit of 12 lookups. Once it has made 12 lookups, it should ask the LLM one final time to see if it can give an answer using the information it has. If the LLM gives an answer, the loop should stop and return it. If it asks for more lookups, the loop should stop without giving a verdict. It should never ask the LLM again after that final attempt.",
+      "written_by": "the student"
     },
     {
       "question": "List each thing your loop remembers from one turn to the next, and say what would go wrong without it.",
-      "answer": "",
-      "written_by": null
+      "answer": "My loop remembers the conversation history, including the model's replies and Wikipedia search results, so it doesn't lose track of what it has already learned or repeat searches. It also keeps count of how many lookups it has made out of 12 so it knows when to stop. Without these, the agent could lose important information or keep searching past the limit and take a long time to reach a verdict.",
+      "written_by": "the student"
     },
     {
       "question": "Now open `reference_loop.py` and compare it with your loop. Describe one difference in implementation and the resulting effects on agent behavior.",
-      "answer": "",
-      "written_by": null
+      "answer": "In the reference loop, the agent checks whether it has reached the limit before making more lookups. In my loop, the agent makes the requested lookups and then gives the model one final chance to answer. This means the reference loop could stop before the model gets to use the latest search results, while my loop gives it a chance to use everything it has found. (difference in order of the loopup limit)",
+      "written_by": "the student"
     }
   ],
   "record": [
@@ -42,6 +42,112 @@
       "kind": "asked",
       "text": "so I just write in normal words what I think the loop should do?",
       "time": "2026-11-22T18:55:13-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "so what is this loop doing?",
+      "time": "2026-11-22T18:58:22-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "translate my outline please in my_loop.py",
+      "time": "2026-11-22T19:01:14-06:00"
+    },
+    {
+      "kind": "ran",
+      "text": "Ran grep",
+      "status": "ok",
+      "file": null,
+      "time": "2026-11-22T19:01:16-06:00"
+    },
+    {
+      "kind": "ran",
+      "text": "Edited my_loop.py",
+      "status": "ok",
+      "file": null,
+      "time": "2026-11-22T19:01:33-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "should i change that then?",
+      "time": "2026-11-22T19:02:28-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "okay im chaing the outline",
+      "time": "2026-11-22T19:05:35-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "translate the outline now",
+      "time": "2026-11-22T19:05:49-06:00"
+    },
+    {
+      "kind": "ran",
+      "text": "Edited my_loop.py",
+      "status": "ok",
+      "file": null,
+      "time": "2026-11-22T19:06:04-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "run  the check",
+      "time": "2026-11-22T19:13:13-06:00"
+    },
+    {
+      "kind": "ran",
+      "text": "Ran check_loop.py",
+      "status": "error",
+      "file": null,
+      "time": "2026-11-22T19:13:15-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "yes the model should get a sort of last chance to reply after it reaches limit",
+      "reached": [
+        "Your outline is in WRITEUP.md"
+      ],
+      "time": "2026-11-22T19:15:32-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "translate outline again",
+      "time": "2026-11-22T19:17:30-06:00"
+    },
+    {
+      "kind": "ran",
+      "text": "Edited my_loop.py",
+      "status": "ok",
+      "file": null,
+      "time": "2026-11-22T19:17:41-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "run the check",
+      "time": "2026-11-22T19:17:53-06:00"
+    },
+    {
+      "kind": "ran",
+      "text": "Ran check_loop.py",
+      "status": "ok",
+      "file": null,
+      "reached": [
+        "Your loop in my_loop.py passes every rule of the check"
+      ],
+      "time": "2026-11-22T19:17:54-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "ref lopp \n\n<pasted_content id=\"fedb\">\nThe reference loop. The homework uses it in Part 0, before your own loop, in\nmy_loop.py, has passed the check (uv run python check_loop.py), and not after.\nIt is built from the same parts as yours, in loop_parts.py.\n\nDo not open this file before step 1a is done: reading it first gives the\nexercise away. After that, compare it with yours (the write-up asks you ",
+      "time": "2026-11-22T19:19:23-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "d\n\n<pasted_content id=\"fedb\">\nef run_agent(claim, client=None, max_steps=MAX_STEPS, lookup=run_tool):\n    \"\"\"Check one claim. Returns what talk.accept() or talk.stop() returns.\"\"\"\n    client = client or anthropic.Anthropic()\n    system = INSTRUCTIONS.read_text()\n    messages = [{\"role\": \"user\", \"content\": f\"Claim: {claim}\"}]\n    trace, read_so_far = [], []\n    talk = Conversation(claim, client, sy",
+      "reached": [
+        "Your answers are in WRITEUP.md"
+      ],
+      "time": "2026-11-22T19:19:50-06:00"
     }
   ],
   "told_the_page": [
@@ -49,7 +155,47 @@
       "time": "2026-11-22T18:53:28-06:00",
       "kind": "status",
       "text": "Waiting for your outline in WRITEUP.md"
+    },
+    {
+      "time": "2026-11-22T19:01:16-06:00",
+      "kind": "status",
+      "text": "Translating your outline into my_loop.py"
+    },
+    {
+      "time": "2026-11-22T19:01:35-06:00",
+      "kind": "status",
+      "text": "Outline translated; waiting for you to ask for the check"
+    },
+    {
+      "time": "2026-11-22T19:05:36-06:00",
+      "kind": "status",
+      "text": "Waiting for your changed outline in WRITEUP.md"
+    },
+    {
+      "time": "2026-11-22T19:06:05-06:00",
+      "kind": "status",
+      "text": "Outline translated again; waiting for you to ask for the check"
+    },
+    {
+      "time": "2026-11-22T19:13:15-06:00",
+      "kind": "status",
+      "text": "Running the check on your loop"
+    },
+    {
+      "time": "2026-11-22T19:17:43-06:00",
+      "kind": "status",
+      "text": "Outline translated again; waiting for you to ask for the check"
+    },
+    {
+      "time": "2026-11-22T19:17:54-06:00",
+      "kind": "status",
+      "text": "Running the check on your loop"
+    },
+    {
+      "time": "2026-11-22T19:17:56-06:00",
+      "kind": "status",
+      "text": "Check passed; waiting for your answers in WRITEUP.md"
     }
   ],
-  "turns": 2
+  "turns": 13
 }
