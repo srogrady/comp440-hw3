@@ -106,12 +106,12 @@ List the three traces you read closely. At least one should be a claim the agent
 | # | Claim (first few words) | Articles | Did it match the dataset's label? | Did it get there for a good reason? Why or why not |
 |---|---|---|---|---|
 | 1 |"the rule of the dynasty that was active when the stone was inscribed.."|3|yes; supported |It did, it had three very supportive articles pulled, and even discussed a misleading point in it's explaination. |
-| 2 |"Four operas are amoung the artist who composed The Prelude for Clarinet..." |2|no;refuted|The agent's explanation gives two reasons, not one. First, the list of best-known works it quoted names no operas. Second, the page says "five operas", not four. Its evidence is pretty strong for answering the question, so it seems to have got there for good reason.|
-| 3 |"Sledge is a journalist for a magazine headquartered in the city which is home to the Long Center for the Performing Arts, Texas. That magazine had an article by Skip Hollandsworth that was adapted into the film Love's Deadly Triangle: The Texas Cadet Murder."|4|yes it said doesn't say when the data set said not supported|so yes it has good reasoning for it's verdict, but maybe it's being too specific?|
+| 2 | "The former leader of the school of Soviet and Russian humorists's youngest son.."|2|no;supported|Its explanation says: "The articles never use the words 'youngest son,' but they mention only one son (Konstantin, alongside a daughter, Ekaterina)"so yes it has good reasoning for it's verdict, but maybe it's being too specific?|
+| 3 |"Sledge is a journalist for a magazine headquartered in the city which is home to the Long Center for the Performing Arts, Texas. That magazine had an article by Skip Hollandsworth that was adapted into the film Love's Deadly Triangle: The Texas Cadet Murder."|4|yes it said doesn't say when the data set said not supported|Yes it has good reasoning for it's verdict stating it can't find info for the first part of the question about the journalist|
 
 Which trace did you find most interesting, and what did the agent do well or badly in it?
 
-> I find the last one form above the most intresting, because it used some intresting reasoning (the daughter being the only other child mentioned) to feel like the claim was supported. 
+> I find the 2 one from above the most intresting, because it used some intresting reasoning (the daughter being the only other child mentioned) to feel like the claim was supported. 
 
 ## 1d. Write the agent's instructions
 
