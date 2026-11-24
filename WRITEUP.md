@@ -106,8 +106,8 @@ List the three traces you read closely. At least one should be a claim the agent
 | # | Claim (first few words) | Articles | Did it match the dataset's label? | Did it get there for a good reason? Why or why not |
 |---|---|---|---|---|
 | 1 |"the rule of the dynasty that was active when the stone was inscribed.."|3|yes; supported |It did, it had three very supportive articles pulled, and even discussed a misleading point in it's explaination. |
-| 2 |"Four operas are amoung the artist who composed The Prelude for Clarinet..." |2|no;refuted|The agent's explanation gives two reasons, not one. First, the list of best-known works it quoted names no operas. Second, the page says "five operas", not four. Its evidence is one quoted passage, from the "Krzysztof Penderecki" page, which it read in entry 3. It did 3 lookups in all.|
-| 3 |"The former leader of the school of Soviet and Russian humorists's youngest son.."|2|no;supported|Its explanation says: "The articles never use the words 'youngest son,' but they mention only one son (Konstantin, alongside a daughter, Ekaterina), so the claim holds in substance though that detail is not stated explicitly." So, again it's being too specific maybe?|
+| 2 |"Four operas are amoung the artist who composed The Prelude for Clarinet..." |2|no;refuted|The agent's explanation gives two reasons, not one. First, the list of best-known works it quoted names no operas. Second, the page says "five operas", not four. Its evidence is pretty strong for answering the question, so it seems to have got there for good reason.|
+| 3 |"Sledge is a journalist for a magazine headquartered in the city which is home to the Long Center for the Performing Arts, Texas. That magazine had an article by Skip Hollandsworth that was adapted into the film Love's Deadly Triangle: The Texas Cadet Murder."|4|yes it said doesn't say when the data set said not supported|so yes it has good reasoning for it's verdict, but maybe it's being too specific?|
 
 Which trace did you find most interesting, and what did the agent do well or badly in it?
 
@@ -131,7 +131,7 @@ Predict the share of claims each version will get right (its verdict matches the
 
 How many lookups will the agent make per claim, on average? Why?
 
-> 7 Because it has a rule that it can't go over 13 so I would think it would be around this middle range. 
+> 7 Because it has a rule that it can't go over 12 so I would think it would be around this middle range. 
 
 # Part 2: The agent against the baselines
 
