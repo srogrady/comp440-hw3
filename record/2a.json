@@ -5,7 +5,7 @@
   "conversations": [
     "5f828321-7bfb-4546-8638-128056e5637e"
   ],
-  "complete": false,
+  "complete": true,
   "checkpoints": [
     {
       "text": "The full run is finished",
@@ -13,7 +13,7 @@
     },
     {
       "text": "The report and your answers are in WRITEUP.md",
-      "reached": false
+      "reached": true
     }
   ],
   "answers": [
@@ -24,18 +24,18 @@
     },
     {
       "question": "How do the results compare with your predictions? Where were you furthest off? Use the numbers from your run, by number of articles.",
-      "answer": "",
-      "written_by": null
+      "answer": "I'm suprised my predictions were pretty off I was the furthest off with the no-tools baseline version, I thought it would be much worse. Specifically, I though the no-tools would get 10% correctly on the 4-article claims and it instead had a 57.6% accuracy.",
+      "written_by": "the student"
     },
     {
       "question": "Does the gap between the agent and the one-search baseline grow with the number of articles? What in the claims or the traces explains what you see?",
-      "answer": "",
-      "written_by": null
+      "answer": "It does for the agent but, only slightly decreasing as the number of articles increases.However, for the one-search it increases from 47.1% accuracy for 2-articles to 51.5% for 3 and 4. This suggests that the agent's mistakes aren't necessarily caused by the number of articles or how complicated a claim is. It can find the correct information but still struggle with interpreting the evidence and deciding whether it fully supports a claim.",
+      "written_by": "the student"
     },
     {
       "question": "The no-tools baseline read nothing. How did it do, and what does that tell you about these claims?",
-      "answer": "",
-      "written_by": null
+      "answer": "The no tools did overall better than the one-search baseline by getting 61% out of 100 of all claims correct vs 50%. That tells me that it can be more accurate to do no search at all unless it's a deep dive. It also had relatively the same accuracy across all the article numbered claims, so it tells me that the claim difficultly isn't that different, rather than certain claims being much easier or harder to evaluate?",
+      "written_by": "the student"
     }
   ],
   "record": [
@@ -70,9 +70,34 @@
       "text": "Edited WRITEUP.md",
       "status": "ok",
       "file": null,
+      "reached": [
+        "The report and your answers are in WRITEUP.md"
+      ],
       "time": "2026-11-23T17:42:50-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "it struggles almost equally on more confusing questions and easy questions i cant tell why do you know? Would this make sense as a hypothesis:This suggests that the difficulty may not just come from how complicated a claim is, but also from how easy it is to find and connect the supporting information. Looking at the traces, the agent may have trouble locating the right evidence even when the clai",
+      "time": "2026-11-23T18:00:57-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "im just kinda confused any way you can help me figure out the why at all>",
+      "time": "2026-11-23T18:01:50-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "this a 4 article Moonwalk is a 1988 autobiography written by an American recording artist. That American recording artist was not the same nationality as the person The Essential Clash album is formally dedicated to.",
+      "time": "2026-11-23T18:03:30-06:00"
+    },
+    {
+      "kind": "ran",
+      "text": "Find the Moonwalk claim in the agent's run",
+      "status": "ok",
+      "file": null,
+      "time": "2026-11-23T18:03:32-06:00"
     }
   ],
   "told_the_page": [],
-  "turns": 2
+  "turns": 5
 }

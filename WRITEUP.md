@@ -163,15 +163,15 @@ agent                        5.1      12.1
 
 How do the results compare with your predictions? Where were you furthest off? Use the numbers from your run, by number of articles.
 
->
+> I'm suprised my predictions were pretty off I was the furthest off with the no-tools baseline version, I thought it would be much worse. Specifically, I though the no-tools would get 10% correctly on the 4-article claims and it instead had a 57.6% accuracy. 
 
 Does the gap between the agent and the one-search baseline grow with the number of articles? What in the claims or the traces explains what you see?
 
->
+> It does for the agent but, only slightly decreasing as the number of articles increases.However, for the one-search it increases from 47.1% accuracy for 2-articles to 51.5% for 3 and 4. This suggests that the agent's mistakes aren't necessarily caused by the number of articles or how complicated a claim is. It can find the correct information but still struggle with interpreting the evidence and deciding whether it fully supports a claim. 
 
 The no-tools baseline read nothing. How did it do, and what does that tell you about these claims?
 
->
+> The no tools did overall better than the one-search baseline by getting 61% out of 100 of all claims correct vs 50%. That tells me that it can be more accurate to do no search at all unless it's a deep dive. It also had relatively the same accuracy across all the article numbered claims, so it tells me that the claim difficultly isn't that different, rather than certain claims being much easier or harder to evaluate?
 
 ## 2b. Check the evidence yourself
 
@@ -179,19 +179,19 @@ Fill in one row for each of the first five claims in your full run, in the order
 
 | # | Claim (first few words) | Agent's verdict | Matched the dataset's label? | Does the quoted evidence support that verdict? | Why or why not |
 |---|---|---|---|---|---|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
-| 4 | | | | | |
-| 5 | | | | | |
+| 1 |"Gregg Rolie and Rob Tyner, are not a keyboardist."|refuted|no|the quoted evidence matches the verdict|it says directly that Gregg Rolie is an american kyboardist.|
+| 2 |"	Patrick Mercer was suspended in April 2014. The seat for the town was won by the owner of Eye Manor. Fiona Jones was elected MP of this town in 1997."|refuted|no|yes the quoted evidence matches the refuted verdict|it says that Mercer resigned after being called to get a suspension, but he didn't instead he resigned.|
+| 3 |"	Queen Medb of Connacht made her invasion in a province in the north of the island of Ireland. The Scots language is spoken in this area."|supported|yes|yes the evidence supports it with a specific qualification; "parts of"|The evidence states information about the location of the invasion, and the language being Ulster-scots. |
+| 4 |"John McTiernan is the director of 1999 American heist film in which J. Paul Boehmer appeared and stars Vonda N. McIntyre, Rene Russo and Denis Leary." |refuted|yes|yes it supports the refute|Because it provides evidence that gives no trace for two of the actors having been in that movie.|
+| 5 |"	The Formula One World Champion is the winner of the 1963 Lombank Trophy."|refuted|no|yes it does, not word for word but essentially yes|Because it says two different winners for the awards.|
 
 Of the five, how many matched the dataset's label, and for how many of those does the quoted evidence support the verdict?
 
->
+>2/5 and I believe the quoted evidence matches for all of the verdicts.
 
 Is accuracy alone a good measure of this agent? Why or why not?
 
->
+> No because all of it's evidence supports it's claim, but it is still getting bad results, because it's verdict is incorrect even though it has good supporting evidence. 
 
 # Part 3 (extra credit): Why the agent fails, and one change
 

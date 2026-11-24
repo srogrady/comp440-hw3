@@ -1,0 +1,43 @@
+{
+  "step": "2b",
+  "title": "Check the evidence yourself",
+  "session_id": null,
+  "conversations": [
+    "5f828321-7bfb-4546-8638-128056e5637e"
+  ],
+  "complete": true,
+  "checkpoints": [
+    {
+      "text": "Your table and answers are in WRITEUP.md",
+      "reached": true
+    }
+  ],
+  "answers": [
+    {
+      "question": "Fill in one row for each of the first five claims in your full run, in the order of the claims file, where the agent's verdict is *supported* or *refuted*.",
+      "answer": "1 | \"Gregg Rolie and Rob Tyner, are not a keyboardist.\" | refuted | no | the quoted evidence matches the verdict | it says directly that Gregg Rolie is an american kyboardist.\n2 | \"\tPatrick Mercer was suspended in April 2014. The seat for the town was won by the owner of Eye Manor. Fiona Jones was elected MP of this town in 1997.\" | refuted | no | yes the quoted evidence matches the refuted verdict | it says that Mercer resigned after being called to get a suspension, but he didn't instead he resigned.\n3 | \"\tQueen Medb of Connacht made her invasion in a province in the north of the island of Ireland. The Scots language is spoken in this area.\" | supported | yes | yes the evidence supports it with a specific qualification; \"parts of\" | The evidence states information about the location of the invasion, and the language being Ulster-scots.\n4 | \"John McTiernan is the director of 1999 American heist film in which J. Paul Boehmer appeared and stars Vonda N. McIntyre, Rene Russo and Denis Leary.\" | refuted | yes | yes it supports the refute | Because it provides evidence that gives no trace for two of the actors having been in that movie.\n5 | \"\tThe Formula One World Champion is the winner of the 1963 Lombank Trophy.\" | refuted | no | yes it does, not word for word but essentially yes | Because it says two different winners for the awards.",
+      "written_by": "the student"
+    },
+    {
+      "question": "Of the five, how many matched the dataset's label, and for how many of those does the quoted evidence support the verdict?",
+      "answer": "2/5 and I believe the quoted evidence matches for all of the verdicts.",
+      "written_by": "the student"
+    },
+    {
+      "question": "Is accuracy alone a good measure of this agent? Why or why not?",
+      "answer": "No because all of it's evidence supports it's claim, but it is still getting bad results, because it's verdict is incorrect even though it has good supporting evidence.",
+      "written_by": "the student"
+    }
+  ],
+  "record": [
+    {
+      "kind": "mark",
+      "reached": [
+        "Your table and answers are in WRITEUP.md"
+      ],
+      "time": "2026-11-23T18:39:29-06:00"
+    }
+  ],
+  "told_the_page": [],
+  "turns": 1
+}

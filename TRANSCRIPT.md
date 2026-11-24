@@ -1424,7 +1424,7 @@ This step was done in the conversation under 0a, session `98f03c83`, from the me
 <!-- transcript-session: 5f828321-7bfb-4546-8638-128056e5637e | 2026-11-23T19:23:22.843Z -->
 ## Session `5f828321` — 2026-11-23 19:23:22
 
-*26 user turns. Tool output shortened; reasoning omitted.*
+*30 user turns. Tool output shortened; reasoning omitted.*
 
 **User:**
 Start step 1c.
@@ -2215,6 +2215,119 @@ agent                        5.1      12.1
 
 Next, open **Results** at the top of the homework page, then "runs/part2", and read "Accuracy". It shows the same counts as percentages. Then, in your editor, answer the three questions under 2a in WRITEUP.md. You don't need to reply here, but you can ask me how to read any row.
 
+**User:**
+it struggles almost equally on more confusing questions and easy questions i cant tell why do you know? Would this make sense as a hypothesis:This suggests that the difficulty may not just come from how complicated a claim is, but also from how easy it is to find and connect the supporting information. Looking at the traces, the agent may have trouble locating the right evidence even when the claim itself seems straightforward.
+
+**Claude:**
+I don't know why, and saying why is your part of this step. I also can't tell you whether your hypothesis makes sense. That would be grading your answer. It goes in WRITEUP.md, under 2a, on the `>` line for the question it answers.
+
+What I can explain is how you'd check a hypothesis like this one. It says something about what happens inside the traces, so the traces are where to look. In the results viewer, open runs/part2. In "Claims", set "The number of articles" to one value, and set "Result" in "The agent" box to "does not match the dataset's label (any reason)". Then read a few of those traces and ask whether the agent found the pages it needed, and what it did after that. Do the same for another number of articles. What you see can back up your hypothesis, change it, or replace it.
+
+When you write it up, the question asks you to say what in the claims or the traces explains what you see. Naming a trace or two that you actually read gives your answer something to stand on.
+
+**User:**
+im just kinda confused any way you can help me figure out the why at all>
+
+**Claude:**
+Yes. I can't give you the why, but I can help you find it. Here's a way to break it down.
+
+**1. Turn the counts into percentages.** That makes the rows easier to compare:
+
+| | 2 articles | 3 articles | 4 articles |
+|---|---|---|---|
+| no-tools | 19/34 = 56% | 23/33 = 70% | 19/33 = 58% |
+| one-search | 16/34 = 47% | 17/33 = 52% | 17/33 = 52% |
+| agent | 22/34 = 65% | 21/33 = 64% | 20/33 = 61% |
+
+**2. Keep the size in mind.** Each column has only about 33 claims, so one claim is about 3 percentage points. The model also doesn't give the same answer every time. You saw that in 1d.
+
+**3. Read some wrong traces.** Pick two or three claims the agent got wrong at each number of articles. For each one, write down a short note on what the agent did: which pages it got to, what it quoted, and where its verdict came from. Then compare your notes across 2, 3 and 4 articles.
+
+If it helps, give me a claim's first few words and I'll paste its trace here, so we can go through it entry by entry. Your explanation goes in WRITEUP.md, under 2a.
+
+**User:**
+this a 4 article Moonwalk is a 1988 autobiography written by an American recording artist. That American recording artist was not the same nationality as the person The Essential Clash album is formally dedicated to.
+
+**Claude:**
+- 🔧 `Bash` — grep -n -o "The Essential Clash album is formally dedicated to" runs/part2/agent.jsonl
+
+  ```
+  16:The Essential Clash album is formally dedicated to
+  ```
+
+- 🔧 `Read` — /Users/shayleeogrady/Documents/macalester/fall 2026/collective intell/comp440-hw3/runs/part2/agen...
+
+  ```
+  16	{"claim": "Moonwalk is a 1988 autobiography written by an American recording artist. That American recording artist was not the same nationality as the person The Essential Clash album is formal...
+  ```
+
+Here is that claim's trace from runs/part2, one entry at a time:
+
+```
+Claim: Moonwalk is a 1988 autobiography written by an American recording artist. That American recording artist was not the same nationality as the person The Essential Clash album is formally dedicated to.
+
+1. read("Moonwalk (autobiography)")
+   → There is no Wikipedia page titled 'Moonwalk (autobiography)'. Try search() first.
+
+2. read("The Essential Clash")
+   → Page: The Essential Clash
+     The Essential Clash is a career-spanning greatest hits album by the Clash first released in 2003. It is part of the ongoing 'The Essential' Sony BMG compilation series. The album is dedicated to Joe Strummer, who died during its compilation.
+     Sections: Reception, Disc one, Disc two, Track listing, Special features, Credits
+
+3. search("Moonwalk 1988 Michael Jackson autobiography")
+   → 1. Moonwalk (dance): kids" Jackson said taught him the dance step in his autobiography, Moonwalk. It had been rumored that Jeffrey Daniel taught Jackson the moonwalk; however
+     2. Moonwalk (book): Moonwalk is a 1988 autobiography by American singer Michael Jackson. It was first published by Doubleday on February 1, 1988, five months after the release
+     3. Health and appearance of Michael Jackson: Jackson had extensive surgery on his nose. Jackson denied those reports in his 1988 autobiography Moonwalk, saying he had only had two rhinoplasties,
+     4. Bill Bray (bodyguard): Michael until 1996, accompanying him during concerts, recording sessions, tours and public appearances. In the 1988 autobiography Moonwalk, Jackson described
+     5. Bad (Michael Jackson song): Love to Love Me", but Jackson rejected it, so it was instead given to Taja Sevelle. In Jackson's 1988 autobiography Moonwalk, Jackson wrote: "Bad" is a song
+
+4. read("Joe Strummer")
+   → Page: Joe Strummer
+     John Graham Mellor (21 August 1952 – 22 December 2002), known professionally as Joe Strummer, was a British musician. He was the co-founder, lyricist, rhythm guitarist and lead vocalist of punk rock band the Clash.
+     Strummer's other career highlights included stints with the 101ers, the Latino Rockabilly War, the Mescaleros and the Pogues, as well as solo music, acting, scoring television shows and films and hosting the BBC Radio show London Calling. Strummer and the Clash were inducted into the Rock and Roll Hall of Fame in March 2003. In his remembrance, Strummer's friends and family established The Joe Strummer Foundation (initially known as Strummerville), a non-profit organisation that gives opportunities to musicians and supports projects around the world to create empowerment through music.
+     Sections: Early life, The Clash (1976–1986), Solo career and soundtrack work (1986–1999), The Mescaleros and other work (1999–2002), Personal life, Death, Legacy, Musical equipment, Selected filmography, Sources, External links
+
+5. answer: supported
+   Evidence:
+   - "Moonwalk is a 1988 autobiography by American singer Michael Jackson."
+   - "The album is dedicated to Joe Strummer, who died during its compilation."
+   - "John Graham Mellor (21 August 1952 – 22 December 2002), known professionally as Joe Strummer, was a British musician."
+   Explanation: Moonwalk is a 1988 autobiography by American singer Michael Jackson. The Essential Clash is dedicated to Joe Strummer, who was British, so the nationalities differ.
+   → accepted
+
+Lookups: 4
+```
+
+The agent's verdict was *supported*. It did not match, so the dataset's label for this claim is *not supported*. In the results viewer, this claim's page shows the same trace.
+
+What you make of this trace goes in WRITEUP.md, under 2a. If you want to look at another claim, give me its first few words.
+
+**User:**
+Start step 2b. Read .workbench/2b.md and follow it from now on, in place of your instructions for any other step.
+
+**Claude:**
+- 🔧 `Read` — /Users/shayleeogrady/Documents/macalester/fall 2026/collective intell/comp440-hw3/.workbench/2b.md
+
+  ```
+  253	# This session: one step of the assignment
+  254	
+  255	You help with one step, and only this one: 2b, "Check the evidence yourself", in Part 2 (The agent against the baselines).
+  256	What this step is, as the page says it under the step's title: In this step you find out whether the agent's quoted evidence really supports its verdicts.
+  257	This step takes about 35 minutes, as the page says. Say so if the student asks.
+  258	The student talks to you in a terminal. Beside it, a web page shows every step of the assignment,
+  259	each with its own Claude Code session, and this step's instructions, which say:
+  260	
+  261	<step-instructions>
+  262	In this step you find out whether the agent's quoted evidence really supports its verdicts.
+  263	
+  264	**Words in this step:** The *evidence* is the sentences the agent quoted from Wikipedia.
+  ... (138 more lines)
+  ```
+
+I'm now on step 2b.
+
+In this step you find out whether the agent's quoted evidence really supports its verdicts. First, open **Results** at the top of the homework page, then "runs/part2". Click "Clear the filters", then set "Verdict" in "The agent" box to "supported or refuted", and leave "Order" at "Order of the claims file". Rows 1 to 5 are your five claims. Read each one's quoted evidence and fill in its row of the table under 2b in WRITEUP.md, in your editor. If you want to see a claim's verdict and evidence here, or more of a page as the agent read it, ask me.
+
 <!-- end-session: 5f828321-7bfb-4546-8638-128056e5637e -->
 
 # 1d. Write the agent's instructions
@@ -2224,6 +2337,10 @@ This step was done in the conversation under 1c, session `5f828321`, from the me
 # 2a. Compare accuracy
 
 This step was done in the conversation under 1c, session `5f828321`, from the message “Start step 2a.”
+
+# 2b. Check the evidence yourself
+
+This step was done in the conversation under 1c, session `5f828321`, from the message “Start step 2b.”
 
 # Other Claude sessions in this folder
 
