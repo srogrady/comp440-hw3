@@ -1424,7 +1424,7 @@ This step was done in the conversation under 0a, session `98f03c83`, from the me
 <!-- transcript-session: 5f828321-7bfb-4546-8638-128056e5637e | 2026-11-23T19:23:22.843Z -->
 ## Session `5f828321` — 2026-11-23 19:23:22
 
-*30 user turns. Tool output shortened; reasoning omitted.*
+*31 user turns. Tool output shortened; reasoning omitted.*
 
 **User:**
 Start step 1c.
@@ -2327,6 +2327,54 @@ Start step 2b. Read .workbench/2b.md and follow it from now on, in place of your
 I'm now on step 2b.
 
 In this step you find out whether the agent's quoted evidence really supports its verdicts. First, open **Results** at the top of the homework page, then "runs/part2". Click "Clear the filters", then set "Verdict" in "The agent" box to "supported or refuted", and leave "Order" at "Order of the claims file". Rows 1 to 5 are your five claims. Read each one's quoted evidence and fill in its row of the table under 2b in WRITEUP.md, in your editor. If you want to see a claim's verdict and evidence here, or more of a page as the agent read it, ask me.
+
+**User:**
+okay I think im done, I don't have time righyt now to do the extra credit
+
+**Claude:**
+- 🔧 `Bash` — grep -n "^## \|^# " WRITEUP.md
+
+  ```
+  1:# COMP 440 HW3 write-up
+  10:## Learning goals
+  21:# Part 0: Set up and check one claim
+  23:## 0a. Get your copy running
+  27:## 0b. Ask the model to assess a claim without tools
+  33:## 0c. Give it one search
+  47:## 0d. Run the agent and read its trace
+  61:# Part 1: How the agent works
+  63:## 1a. Design the loop
+  83:## 1b. Be the agent
+  102:## 1c. Watch the agent work
+  116:## 1d. Write the agent's instructions
+  ... (8 more lines)
+  ```
+
+- 🔧 `Read` — /Users/shayleeogrady/Documents/macalester/fall 2026/collective intell/comp440-hw3/WRITEUP.md
+
+  ```
+  102	## 1c. Watch the agent work
+  103	
+  104	List the three traces you read closely. At least one should be a claim the agent got wrong (if it got any wrong).
+  105	
+  106	| # | Claim (first few words) | Articles | Did it match the dataset's label? | Did it get there for a good reason? Why or why not |
+  107	|---|---|---|---|---|
+  108	| 1 |"the rule of the dynasty that was active when the stone was inscribed.."|3|yes; supported |It did, it had three very supportive articles pulled, and even discussed a misleading point in it...
+  109	| 2 |"Four operas are amoung the artist who composed The Prelude for Clarinet..." |2|no;refuted|The agent's explanation gives two reasons, not one. First, the list of best-known works it quoted...
+  110	| 3 |"The former leader of the school of Soviet and Russian humorists's youngest son.."|2|no;supported|Its explanation says: "The articles never use the words 'youngest son,' but they mention o...
+  111	
+  112	Which trace did you find most interesting, and what did the agent do well or badly in it?
+  113	
+  ... (83 more lines)
+  ```
+
+I read WRITEUP.md. 2b has all five rows and both answers filled in. Two earlier things don't match the homework yet, and you may want to fix them before you submit:
+
+- **1c, the table:** there's still no 4-article claim. Rows 2 and 3 both need 2 articles. The step asks for one claim each that needs 2, 3 and 4 articles.
+- **1c, last column of rows 2 and 3:** row 2 is my facts from this chat, copied word for word. It doesn't yet say whether you think the agent got there for a good reason. Row 3 is mostly my quote of the agent's explanation, plus one line of your own.
+- **1e, lookups answer:** it says the limit is 13. The agent's limit is 12 lookups.
+
+Part 3 is extra credit, so skipping it is fine. Once 2b is ticked, the page commits and pushes your work as "Part 2 done". Then submit it yourself, as the README's Submitting section says.
 
 <!-- end-session: 5f828321-7bfb-4546-8638-128056e5637e -->
 

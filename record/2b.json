@@ -36,8 +36,20 @@
         "Your table and answers are in WRITEUP.md"
       ],
       "time": "2026-11-23T18:39:29-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "okay I think im done, I don't have time righyt now to do the extra credit",
+      "time": "2026-11-23T18:39:56-06:00"
+    },
+    {
+      "kind": "ran",
+      "text": "List the write-up's headings with line numbers",
+      "status": "ok",
+      "file": null,
+      "time": "2026-11-23T18:39:58-06:00"
     }
   ],
   "told_the_page": [],
-  "turns": 1
+  "turns": 2
 }
